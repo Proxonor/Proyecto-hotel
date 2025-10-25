@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivago Pagos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Trivago Pagos</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Métodos de pago</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Realiza tus pagos de forma segura</h2>
+      <p>Con Trivago Pagos puedes pagar tus reservas fácilmente con los métodos más confiables.</p>
+      <button id="abrirModal">Pagar ahora</button>
+    </section>
+
+    <section class="metodos">
+      <h2>Métodos de pago disponibles</h2>
+      <div class="tarjetas">
+        <div class="card">Visa</div>
+        <div class="card">MasterCard</div>
+        <div class="card">PayPal</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Trivago Pagos - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- 💳 Modal de pago -->
+  <div id="modalPago" class="modal">
+    <div class="modal-contenido">
+      <span id="cerrarModal" class="cerrar">&times;</span>
+      <h2>Ingresar datos de tarjeta</h2>
+      <form>
+        <label>Nombre en la tarjeta</label>
+        <input type="text" placeholder="Ej. yahel josias trinidad" required>
+
+        <label>Número de tarjeta</label>
+        <input type="number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+
+        <div class="fila">
+          <div>
+            <label>Fecha de vencimiento</label>
+            <input type="number" placeholder="MM/AA" maxlength="5" required>
+          </div>
+          <div>
+            <label>CVC</label>
+            <input type="number" placeholder="123" maxlength="3" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-pagar">Confirmar pago</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modalPago");
+    const abrir = document.getElementById("abrirModal");
+    const cerrar = document.getElementById("cerrarModal");
+
+    abrir.onclick = () => modal.style.display = "flex";
+    cerrar.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+</body>
+</html>

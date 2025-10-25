@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes - Hotel Paraíso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Preguntas Frecuentes</h1>
+    <p>Resuelve tus dudas más comunes antes de hospedarte con nosotros.</p>
+  </header>
+
+  <section class="faq">
+
+    <div class="faq-item">
+      <button class="faq-question">¿A qué hora es el check-in y el check-out?</button>
+      <div class="faq-answer">
+        <p>El check-in es a partir de las 3:00 p.m. y el check-out hasta las 12:00 p.m. Si lo necesitas, puedes solicitar salida tardía con costo adicional.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿El hotel acepta mascotas?</button>
+      <div class="faq-answer">
+        <p>Sí, aceptamos mascotas pequeñas (hasta 10 kg) con un cargo adicional. Se proporciona cama y recipiente de agua para tu compañero peludo.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿El desayuno está incluido?</button>
+      <div class="faq-answer">
+        <p>En la mayoría de nuestras tarifas, el desayuno tipo buffet está incluido. También puedes solicitar servicio a la habitación con costo adicional.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Cuentan con estacionamiento?</button>
+      <div class="faq-answer">
+        <p>Sí, tenemos estacionamiento privado y gratuito para todos nuestros huéspedes, con vigilancia las 24 horas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Tienen piscina o gimnasio?</button>
+      <div class="faq-answer">
+        <p>Sí, contamos con piscina climatizada, gimnasio completamente equipado y área de spa con masajes y sauna.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Puedo cancelar mi reserva sin costo?</button>
+      <div class="faq-answer">
+        <p>Depende de la tarifa elegida. Las tarifas flexibles permiten cancelación gratuita hasta 24 horas antes de la llegada.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿El hotel tiene Wi-Fi gratuito?</button>
+      <div class="faq-answer">
+        <p>Sí, ofrecemos conexión Wi-Fi gratuita de alta velocidad en todas las habitaciones y áreas comunes del hotel.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Hay servicio de transporte al aeropuerto?</button>
+      <div class="faq-answer">
+        <p>Sí, ofrecemos transporte privado al aeropuerto con costo adicional. Puedes solicitarlo con al menos 12 horas de anticipación.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Qué métodos de pago aceptan?</button>
+      <div class="faq-answer">
+        <p>Aceptamos tarjetas Visa, MasterCard, American Express, transferencias y pagos en efectivo en recepción.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Ofrecen habitaciones para personas con discapacidad?</button>
+      <div class="faq-answer">
+        <p>Sí, disponemos de habitaciones adaptadas con accesos amplios, baños especiales y servicios accesibles en todo el hotel.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Cuentan con restaurante?</button>
+      <div class="faq-answer">
+        <p>Sí, nuestro restaurante “El Jardín” ofrece cocina mexicana e internacional. También hay bar y cafetería disponibles todo el día.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">¿Puedo recibir visitas en mi habitación?</button>
+      <div class="faq-answer">
+        <p>Las visitas están permitidas durante el día, pero no pueden permanecer durante la noche sin registrarse en recepción.</p>
+      </div>
+    </div>
+
+    <a href="/hotel-trivago.html">Regresar</a>
+  </section>
+
+   <footer> 
+  <p>&copy; 2025 Hotel Trivago. Todos los derechos reservados.</p>
+  <a href="politica.html" class="politica-link">Política y Privacidad</a>
+  </footer>
+
+  <script>
+    // Animación de abrir/cerrar respuestas
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("active");
+        const answer = q.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+ 
+
+</body>
+</html>

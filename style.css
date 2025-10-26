@@ -1,110 +1,187 @@
-/* === Estilos generales === */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f8fc;
+/* ---------------- Reset básico ---------------- */
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
 }
 
-/* === Encabezado === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f2f8ff, #dfeeff);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- Encabezado ---------------- */
 header {
-  text-align: center;
-  background: linear-gradient(135deg, #0b3954, #106ba3);
+  background-color: #007cc3;
   color: white;
-  padding: 50px 20px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
-  font-size: 2.4em;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
-/* === Sección FAQ === */
-.faq {
-  max-width: 850px;
-  margin: 50px auto;
-  padding: 0 20px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-.faq-item {
-  background: white;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-3px);
-}
-
-.faq-question {
-  width: 100%;
-  background: #106ba3;
+nav a {
   color: white;
-  border: none;
-  text-align: left;
-  padding: 18px 22px;
-  font-size: 1.05em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.faq-question::after {
-  content: "+";
-  position: absolute;
-  right: 20px;
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- Sección principal ---------------- */
+.intro {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #004d7a;
+}
+
+.intro p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.intro button {
+  background: #007cc3;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.intro button:hover {
+  background: #005f90;
+}
+
+/* ---------------- Tarjetas ---------------- */
+.metodos {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 120px;
   font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-.faq-question.active::after {
-  transform: rotate(45deg);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.faq-question:hover {
-  background: #0b4f78;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  background: #f1f5f9;
-  transition: max-height 0.3s ease;
-}
-
-.faq-answer p {
-  padding: 15px 25px;
-  margin: 0;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* === Pie de página === */
+/* ---------------- Pie de página ---------------- */
 footer {
+  margin-top: auto;
   text-align: center;
-  padding: 20px;
-  background-color: #0b3954;
+  background: #e8e8e8;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* ---------------- Modal ---------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-pagar {
+  margin-top: 15px;
+  background: #007cc3;
   color: white;
-  margin-top: 50px;
-  font-size: 0.9em;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.politica-link {
-  display: block;
-  text-align: left;
-  color: #aad8ff;
-  text-decoration: none;
-  font-size: 0.9em;
-  margin-top: 10px;
-  margin-left: 15px;
-  transition: color 0.3s ease;
-}
-
-.politica-link:hover {
-  color: #ffffff;
-  text-decoration: underline;
+.btn-pagar:hover {
+  background: #005f90;
 }
